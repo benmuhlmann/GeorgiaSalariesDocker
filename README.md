@@ -1,3 +1,18 @@
+# GeorgiaSalariesDocker
+
+A containerized version of the [GeorgiaSalaries](https://github.com/benmuhlmann/GeorgiaSalaries) project, which explores Georgia state employee salary data from 2012-2022.
+
+This repository contains the same core functionality as the original project but is structured for containerized deployment using Docker and AWS App Runner.
+
+## Key Changes
+- Containerized using Docker
+- S3 integration for data storage
+- Modular application structure
+- Production-ready configuration
+
+## Original Project
+For the original implementation and detailed documentation, please visit [GeorgiaSalaries](https://github.com/benmuhlmann/GeorgiaSalaries).
+
 # Georgia Salaries
 
 I like reading the poem of the day on [poetryfoundation.org](poetryfoundation.org). 
