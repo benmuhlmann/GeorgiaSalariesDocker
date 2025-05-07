@@ -4,7 +4,8 @@ with the eventual goal of creating a dashboard to visualize salary data
 """
 
 import pandas as pd
-import pickle
+import pyarrow as pa
+import pyarrow.parquet as pq
 
 # Is it more efficient to parse all three names at once?
 
@@ -98,8 +99,14 @@ all_salaries = all_salaries.rename(columns={'NAME': 'Name',
                                             'SALARY': 'Salary',
                                             'FISCAL_YEAR': 'Fiscal Year'})
 
-with open('all_salaries.pickle', 'wb') as file1:
-    pickle.dump(all_salaries, file1)
+# Save as parquet file with compression
+print("\nSaving processed data as parquet file...")
+all_salaries.to_parquet('all_salaries.parquet', 
+                       engine='pyarrow',
+                       compression='snappy',  # Good balance of speed and compression
+                       index=False)  # Don't save the index
+
+print("Data processing complete!")
 
 
 
