@@ -1,3 +1,7 @@
+# Git
+.git
+.gitignore
+
 # Python
 __pycache__/
 *.py[cod]
@@ -39,9 +43,4 @@ venv_new/
 !requirements.txt
 
 # Logs
-*.log
-
-# OS
-.DS_Store
-
-To-Do.txt
+*.log 
